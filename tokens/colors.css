@@ -1,0 +1,82 @@
+/* ============================================================
+   TodoPymes — Color tokens
+   Brand palette follows a strict usage hierarchy (% of visual
+   weight):  40 / 25 / 15 / 10 / 7 / 3
+   ============================================================ */
+
+:root {
+  /* ---- Brand core (raw values) ------------------------------------ */
+  --tp-azul-profundo:    #003357; /* 40% · Confianza   · dominant surfaces */
+  --tp-azul-corporativo: #124b87; /* 25% · Profesionalismo · secondary blocks */
+  --tp-azul-acento:      #0c6af9; /* 15% · Tecnología  · CTA / links / highlights */
+  --tp-azul-grisaceo:    #7590a7; /* 10% · Equilibrio  · muted text, borders */
+  --tp-gris-claro:       #e5e9ed; /*  7% · Soporte     · card & icon backgrounds */
+  --tp-blanco:           #ffffff; /*  3% · Claridad    · breathing room */
+
+  /* ---- Extended blue ramp (derived, harmonious) ------------------- */
+  --tp-blue-950: #00243f;
+  --tp-blue-900: #003357; /* profundo */
+  --tp-blue-800: #0a3d68;
+  --tp-blue-700: #124b87; /* corporativo */
+  --tp-blue-600: #18599f;
+  --tp-blue-500: #0c6af9; /* acento */
+  --tp-blue-400: #4a90fb;
+  --tp-blue-300: #84b4fc;
+  --tp-blue-200: #bcd6fe;
+  --tp-blue-100: #e3eefe;
+  --tp-blue-50:  #f2f7ff;
+
+  /* ---- Neutral / slate ramp --------------------------------------- */
+  --tp-slate-900: #0f1f2e;
+  --tp-slate-700: #3d566c;
+  --tp-slate-500: #7590a7; /* grisaceo */
+  --tp-slate-400: #9aafc0;
+  --tp-slate-300: #c2cfdb;
+  --tp-slate-200: #e5e9ed; /* gris claro */
+  --tp-slate-100: #eff2f5;
+  --tp-slate-50:  #f7f9fb;
+  --tp-white:     #ffffff;
+
+  /* ---- Semantic accents ------------------------------------------- */
+  --tp-success: #16a34a; /* green check — "acción completada / sistema activo" */
+  --tp-success-soft: #dcfce7;
+  --tp-warning: #e8a33d;
+  --tp-warning-soft: #fdf0db;
+  --tp-danger:  #d8453b;
+  --tp-danger-soft: #fbe4e2;
+
+  /* ================================================================
+     SEMANTIC ALIASES — prefer these in product UI
+     ================================================================ */
+
+  /* Surfaces */
+  --surface-page:        var(--tp-slate-50);   /* app background */
+  --surface-card:        var(--tp-white);      /* cards, panels */
+  --surface-sunken:      var(--tp-slate-100);  /* wells, track, inputs idle */
+  --surface-icon:        var(--tp-gris-claro); /* icon "pastilla" background */
+  --surface-brand:       var(--tp-azul-profundo);   /* hero / dominant blocks */
+  --surface-brand-alt:   var(--tp-azul-corporativo);/* secondary brand blocks */
+  --surface-inverse:     var(--tp-azul-profundo);
+
+  /* Text */
+  --text-strong:   var(--tp-azul-profundo);  /* headings */
+  --text-body:     #1f3650;                  /* default body on light */
+  --text-muted:    var(--tp-azul-grisaceo);  /* captions, secondary */
+  --text-on-brand: var(--tp-white);          /* text on deep blue */
+  --text-on-brand-muted: #b9cbdd;
+  --text-link:     var(--tp-azul-acento);
+
+  /* Action / CTA */
+  --action-primary:        var(--tp-azul-acento);
+  --action-primary-hover:  #0a5ad6;   /* darker acento */
+  --action-primary-press:  #084ab0;
+  --action-secondary:      var(--tp-azul-profundo);
+  --action-secondary-hover:#063f66;
+
+  /* Borders & lines */
+  --border-subtle:  #e2e8ef;
+  --border-default: #d2dce6;
+  --border-strong:  var(--tp-azul-grisaceo);
+  --border-brand:   var(--tp-azul-acento);
+  --focus-ring:     rgba(12, 106, 249, 0.35);
+}

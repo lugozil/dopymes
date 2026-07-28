@@ -1,0 +1,38 @@
+/* ============================================================
+   TodoPymes — base element defaults & helpers
+   Lightweight resets so specimens/components inherit the brand.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  color: var(--text-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--text-strong);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-snug);
+  margin: 0;
+}
+
+a { color: var(--text-link); text-decoration: none; }
+
+/* Eyebrow / micro label */
+.tp-eyebrow {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--tp-azul-acento);
+}
+
+/* The brand's signature: accenting a keyword inside a heading */
+.tp-accent { color: var(--tp-azul-acento); }
