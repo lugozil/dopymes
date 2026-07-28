@@ -1,0 +1,79 @@
+<!-- @dsCard group="Sitio web" viewport="1280x900" name="Recursos · Programa de Partners" subtitle="Página de partners (estructura Quo) con identidad TodoPymes" -->
+<!-- @startingPoint section="Sitio web" subtitle="Página de partners / recursos — estructura Quo, identidad TodoPymes" viewport="1280x900" -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TodoPymes · Programa de Partners</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+  html, body { margin: 0; background: #fff; }
+  *::-webkit-scrollbar { width: 11px; height: 11px; }
+  *::-webkit-scrollbar-thumb { background: var(--tp-slate-300); border-radius: 10px; border: 3px solid #fff; }
+  a { text-decoration: none; }
+  button { font-family: var(--font-sans); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="ui_kits/landing_clone/image-slot.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script>
+const ICONS = "assets/icons/";
+const LOGOS = "assets/logos/";
+const SOURCES = [
+  "components/core/Button.jsx",
+  "components/core/Icon.jsx",
+  "components/core/Badge.jsx",
+  "components/core/Card.jsx",
+  "components/core/Avatar.jsx",
+  "ui_kits/landing_clone/parts/Nav.jsx",
+  "ui_kits/landing_clone/parts/LeadModal.jsx",
+  "ui_kits/landing_clone/parts/Closing.jsx",
+  "ui_kits/landing_clone/parts/rec/RecHero.jsx",
+  "ui_kits/landing_clone/parts/rec/RecSections.jsx",
+];
+
+(async () => {
+  const NS = {};
+  let combined = "var ICONS=" + JSON.stringify(ICONS) + ";\nvar LOGOS=" + JSON.stringify(LOGOS) + ";\n";
+  const names = [];
+  for (const f of SOURCES) {
+    let src = await (await fetch(f)).text();
+    src = src.replace(/^\s*import\s+.*?;?\s*$/gm, "");
+    src = src.replace(/export\s+function\s+(\w+)/g, (m, n) => { names.push(n); return "function " + n; });
+    combined += "\n" + src + "\n";
+  }
+  combined += "\nObject.assign(NS, {" + names.join(",") + "});";
+  new Function("React", "NS", Babel.transform(combined, { presets: ["react"] }).code)(window.React, NS);
+
+  const { NavBar, RecHero, WhyPartner, Programs, PartnerStory, Benefits, SuccessLooks, OtherWays, GetInTouch, FinalCta, Footer, LeadModal } = NS;
+  const e = React.createElement;
+  function Page() {
+    return e(React.Fragment, null,
+      e(NavBar, { active: "recursos" }),
+      e(RecHero),
+      e(WhyPartner),
+      e(Programs),
+      e(PartnerStory),
+      e(Benefits),
+      e(SuccessLooks),
+      e(OtherWays),
+      e(GetInTouch),
+      e(FinalCta, { title: "Nunca pierdas una", accent: "llamada o cliente" }),
+      e(Footer),
+      e(LeadModal)
+    );
+  }
+  ReactDOM.createRoot(document.getElementById("root")).render(e(Page));
+})().catch((err) => {
+  document.getElementById("root").innerHTML = "<pre style='color:#d8453b;padding:24px;font:13px monospace;white-space:pre-wrap'>" + (err.stack || err) + "</pre>";
+});
+</script>
+</body>
+</html>

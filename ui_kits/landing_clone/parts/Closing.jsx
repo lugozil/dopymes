@@ -114,8 +114,8 @@ export function Footer() {
           <img src={LOGOS + "todopymes-principal.png"} alt="TodoPymes" style={{ height: 24 }} />
           <span style={{ fontSize: 13, color: "var(--text-muted)" }}>Automatizar · Conectar · Optimizar · Crecer</span>
           <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 18, fontSize: 13, color: "var(--text-muted)" }}>
-            <a href="#" style={{ color: "var(--text-muted)" }}>Términos</a>
-            <a href="#" style={{ color: "var(--text-muted)" }}>Privacidad</a>
+            <a href="TodoPymes Terminos.html" style={{ color: "var(--text-muted)" }}>Términos</a>
+            <a href="TodoPymes Privacidad.html" style={{ color: "var(--text-muted)" }}>Privacidad</a>
             <span>© 2026 TodoPymes · LATAM y el Caribe</span>
           </div>
         </div>

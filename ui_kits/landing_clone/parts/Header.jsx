@@ -101,7 +101,7 @@ function Callout({ children, style }) {
 export function Header() {
   return (
     <>
-      <NavBar active="" />
+      <NavBar active="producto" />
       <section style={{ background: "#fff", textAlign: "center", padding: "62px 28px 0" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 9, fontSize: 15 }}>
           <Star />

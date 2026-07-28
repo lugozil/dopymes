@@ -1,0 +1,106 @@
+<!-- @dsCard group="Sitio web" viewport="1280x900" name="Soluciones · Servicios a domicilio" subtitle="Página de soluciones (estructura Quo) con identidad TodoPymes" -->
+<!-- @startingPoint section="Sitio web" subtitle="Página de solución vertical — estructura Quo, identidad TodoPymes" viewport="1280x900" -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TodoPymes · Soluciones para servicios a domicilio</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+  html, body { margin: 0; background: #fff; }
+  *::-webkit-scrollbar { width: 11px; height: 11px; }
+  *::-webkit-scrollbar-thumb { background: var(--tp-slate-300); border-radius: 10px; border: 3px solid #fff; }
+  a { text-decoration: none; }
+  button { font-family: var(--font-sans); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="ui_kits/landing_clone/image-slot.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script>
+const ICONS = "assets/icons/";
+const LOGOS = "assets/logos/";
+const SOURCES = [
+  "components/core/Button.jsx",
+  "components/core/Icon.jsx",
+  "components/core/Badge.jsx",
+  "components/core/Card.jsx",
+  "components/core/Avatar.jsx",
+  "ui_kits/landing_clone/parts/Nav.jsx",
+  "ui_kits/landing_clone/parts/LeadModal.jsx",
+  "ui_kits/landing_clone/parts/Closing.jsx",
+  "ui_kits/landing_clone/parts/sol/SolHero.jsx",
+  "ui_kits/landing_clone/parts/sol/SolSections.jsx",
+];
+
+(async () => {
+  const NS = {};
+  let combined = "var ICONS=" + JSON.stringify(ICONS) + ";\nvar LOGOS=" + JSON.stringify(LOGOS) + ";\n";
+  const names = [];
+  for (const f of SOURCES) {
+    let src = await (await fetch(f)).text();
+    src = src.replace(/^\s*import\s+.*?;?\s*$/gm, "");
+    src = src.replace(/export\s+function\s+(\w+)/g, (m, n) => { names.push(n); return "function " + n; });
+    combined += "\n" + src + "\n";
+  }
+  combined += "\nObject.assign(NS, {" + names.join(",") + "});";
+  new Function("React", "NS", Babel.transform(combined, { presets: ["react"] }).code)(window.React, NS);
+
+  const {
+    NavBar, SolHero, SolDarkCards, SolSection, SolVideo, SolTestimonials, SolTools,
+    PanelChat, PanelNotes, PanelFlow, PanelInsights, GetStarted, FinalCta, Footer, LeadModal
+  } = NS;
+  const e = React.createElement;
+
+  const sec1 = [
+    { ic: "internet", t: "Enrutamiento automático", b: "Envía las llamadas al técnico u oficina correcta según disponibilidad, horario o tipo de trabajo, sin que el cliente rebote entre teléfonos." },
+    { ic: "configuracion", t: "La IA cubre tus llamadas 24/7", b: "La IA responde como un miembro experto del equipo — no un bot genérico. Entrénala con tus servicios, precios y FAQs para que califique leads y capture datos." },
+    { ic: "mensajes", t: "Números locales que dan confianza", b: "Usa códigos de área locales para cada zona de servicio, así los clientes ven un número familiar cuando llamas de vuelta." },
+  ];
+  const sec2 = [
+    { ic: "usuario", t: "Todo tu equipo en un número", b: "Cada llamada, mensaje y nota de voz vive en una bandeja compartida. Si alguien se enferma, sale de vacaciones o deja la empresa, nada se pierde." },
+    { ic: "informacion", t: "Notas internas", b: "Comparte notas para que tu equipo coordine los seguimientos sin hacer que el cliente repita la información." },
+    { ic: "equipo", t: "Colabora fácilmente", b: "Cualquiera del equipo responde o da seguimiento desde la misma línea. Todos ven la conversación completa: quién llamó, qué se dijo y quién respondió." },
+  ];
+  const sec3 = [
+    { ic: "configuracion", t: "Flujos y grupos de llamada", b: "Flujos de arrastrar y soltar que dirigen emergencias, nuevos trabajos y dudas de facturación al equipo o técnico de guardia a la primera." },
+    { ic: "agenda", t: "Cobertura fuera de horario", b: "Crea flujos separados para fuera de horario con escalado claro y un asistente IA, para que los trabajos urgentes lleguen a alguien." },
+    { ic: "ajustes", t: "Menús telefónicos", b: "Crea menús cortos y simples que llevan rápido al cliente con el equipo correcto. Se acabaron los árboles confusos de 10 opciones." },
+  ];
+  const sec4 = [
+    { ic: "estadistica", t: "Actividad transparente", b: "Ve quién contestó cada llamada y qué tan rápido le dio seguimiento tu equipo." },
+    { ic: "analisis", t: "Historial y supervisión", b: "Detecta patrones en llamadas perdidas y horas pico para asignar personal y evitar trabajos perdidos." },
+    { ic: "nube", t: "No pierdas ningún detalle", b: "Deja de depender de la memoria. Cada conversación se graba y se convierte en transcripción con resumen IA de lo clave." },
+  ];
+
+  function Page() {
+    return e(React.Fragment, null,
+      e(NavBar, { active: "soluciones" }),
+      e(SolHero),
+      e(SolDarkCards),
+      e(SolSection, { title: "Responde a cada oportunidad —", accent: "rápido", body: "TodoPymes dirige nuevas llamadas y mensajes a la persona correcta en el orden correcto, con cobertura fuera de horario, para que cada cliente reciba una respuesta veloz.", textSide: "left", panel: e(PanelChat), items: sec1 }),
+      e(SolVideo),
+      e(SolSection, { title: "Mantén a equipo, campo y clientes en la", accent: "misma página", body: "Es fácil que los detalles se pierdan cuando las consultas se reparten entre equipos. TodoPymes registra y organiza cada mensaje en un solo lugar, así todos saben qué sigue.", textSide: "right", panel: e(PanelNotes), items: sec2, bg: "var(--tp-slate-50)" }),
+      e(SolSection, { title: "Las llamadas se contestan, incluso cuando estás", accent: "ocupado", body: "TodoPymes te deja configurar reglas de enrutamiento, grupos de timbrado y rutas fuera de horario que siguen tus horarios reales. Cada llamada llega a la persona correcta en segundos.", textSide: "left", panel: e(PanelFlow), items: sec3 }),
+      e(SolTestimonials),
+      e(SolTools),
+      e(SolSection, { title: "Toma decisiones más inteligentes con", accent: "insights de llamadas", body: "Obtén la visibilidad que necesitas para operar más afinado, formar a tu equipo y ganar más clientes felices.", textSide: "right", panel: e(PanelInsights), items: sec4, bg: "var(--tp-slate-50)" }),
+      e(GetStarted, { title: "Mantente al tanto de cada llamada, trabajo y", subtitle: "conversación de tu negocio de servicios." }),
+      e(FinalCta, { title: "Nunca pierdas una", accent: "llamada o cliente" }),
+      e(Footer),
+      e(LeadModal)
+    );
+  }
+  ReactDOM.createRoot(document.getElementById("root")).render(e(Page));
+})().catch((err) => {
+  document.getElementById("root").innerHTML = "<pre style='color:#d8453b;padding:24px;font:13px monospace;white-space:pre-wrap'>" + (err.stack || err) + "</pre>";
+});
+</script>
+</body>
+</html>
