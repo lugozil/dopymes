@@ -82,6 +82,9 @@ export function CompareTable() {
         <h2 style={{ textAlign: "center", fontSize: "clamp(28px,3.4vw,46px)", fontWeight: "var(--fw-black)", letterSpacing: "-0.02em", color: "var(--text-strong)", marginBottom: 8 }}>Compara los planes</h2>
         <p style={{ textAlign: "center", fontSize: 16, color: "var(--text-muted)", marginBottom: 40 }}>Todo lo que incluye cada plan, en detalle.</p>
 
+        {/* en pantallas angostas la tabla se desplaza horizontal en vez de reflow */}
+        <div className="tp-compare-scroll">
+        <div>
         {/* sticky-ish header */}
         <div style={{ display: "grid", gridTemplateColumns: "1.6fr 1fr 1fr 1fr", alignItems: "end", gap: 12, padding: "16px 16px", borderBottom: "2px solid var(--border-default)", position: "sticky", top: 64, background: "#fff", zIndex: 5 }}>
           <span style={{ fontSize: 15, fontWeight: "var(--fw-bold)", color: "var(--text-strong)" }}>Funciones</span>
@@ -106,6 +109,8 @@ export function CompareTable() {
             ))}
           </div>
         ))}
+        </div>
+        </div>
       </div>
     </section>
   );
@@ -123,7 +128,7 @@ export function AddOns() {
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "84px 28px" }}>
         <h2 style={{ fontSize: "clamp(26px,3vw,42px)", fontWeight: "var(--fw-black)", letterSpacing: "-0.02em", color: "var(--text-strong)", marginBottom: 8 }}>Complementos</h2>
         <p style={{ fontSize: 16, color: "var(--text-muted)", marginBottom: 36 }}>Potencia cualquier plan con lo que tu negocio necesite.</p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 22 }}>
           {items.map((a, i) => (
             <div key={i} style={{ background: "#fff", border: "1px solid var(--border-subtle)", borderRadius: 18, padding: "26px 26px 28px", boxShadow: "var(--shadow-xs)" }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 18 }}>
@@ -199,7 +204,7 @@ export function SwitchFree() {
             <Button variant="secondary" size="md">Migra tu número</Button>
           </div>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 22 }}>
           {cards.map((c, i) => (
             <div key={i} style={{ background: "rgba(255,255,255,.7)", border: "1px solid var(--tp-blue-200)", borderRadius: 18, padding: "26px 26px 28px" }}>
               <span style={{ width: 46, height: 46, borderRadius: 12, background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 18, boxShadow: "var(--shadow-xs)" }}>

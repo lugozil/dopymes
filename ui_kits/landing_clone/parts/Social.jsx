@@ -18,7 +18,7 @@ export function Stories() {
           Negocios que <span style={{ color: "var(--tp-blue-400)" }}>crecen</span> con TodoPymes
         </h2>
 
-        <div style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.08)", borderRadius: 22, padding: 22, display: "grid", gridTemplateColumns: "1.45fr 1fr", gap: 30, alignItems: "center" }}>
+        <div style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.08)", borderRadius: 22, padding: 22, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 30, alignItems: "center" }}>
           {/* video */}
           <div style={{ position: "relative", borderRadius: 14, overflow: "hidden" }}>
             <image-slot id="tp-story-video" shape="rounded" radius="14" placeholder="Suelta el video o la portada de tu caso de éxito" style={{ display: "block", width: "100%", height: 380 }}></image-slot>
@@ -89,7 +89,7 @@ export function SwitchProvider() {
         </div>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 22 }}>
         {cards.map((c, i) => (
           <div key={i} style={{ background: "var(--tp-slate-100)", borderRadius: 18, padding: "26px 26px 30px" }}>
             <span style={{ width: 46, height: 46, borderRadius: 12, background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 18, boxShadow: "var(--shadow-xs)" }}>

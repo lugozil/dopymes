@@ -36,3 +36,34 @@ a { color: var(--text-link); text-decoration: none; }
 
 /* The brand's signature: accenting a keyword inside a heading */
 .tp-accent { color: var(--tp-azul-acento); }
+
+/* ============================================================
+   Responsive — safety net + targeted fixes for layouts that
+   can't reflow via auto-fit/minmax alone (nav, hero app mockup,
+   pricing comparison table).
+   ============================================================ */
+
+html { overflow-x: hidden; }
+
+@media (max-width: 780px) {
+  .tp-nav-links,
+  .tp-nav-secondary { display: none !important; }
+  .tp-nav-row { gap: 14px !important; }
+}
+
+@media (max-width: 760px) {
+  .tp-app-preview {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    width: min(420px, 94%) !important;
+  }
+  .tp-app-preview > div:nth-child(1),
+  .tp-app-preview > div:nth-child(2) { display: none !important; }
+  .tp-app-preview > div:nth-child(3) { min-height: 360px; }
+  .tp-callout { display: none !important; }
+}
+
+.tp-compare-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+@media (max-width: 720px) {
+  .tp-compare-scroll > * { min-width: 640px; }
+}

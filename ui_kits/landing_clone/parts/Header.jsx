@@ -24,7 +24,7 @@ function AppPreview() {
     { n: "(365) 654-3233", m: "Nuevo lead desde Landing", t: "Jul 5", a: "slate", unread: false },
   ];
   return (
-    <div style={{ background: "#fff", borderRadius: 16, boxShadow: "0 30px 70px rgba(0,36,63,.35)", overflow: "hidden", display: "grid", gridTemplateColumns: "188px 232px 1fr", width: "min(880px, 92%)", height: 392, border: "1px solid rgba(255,255,255,.6)" }}>
+    <div className="tp-app-preview" style={{ background: "#fff", borderRadius: 16, boxShadow: "0 30px 70px rgba(0,36,63,.35)", overflow: "hidden", display: "grid", gridTemplateColumns: "188px 232px 1fr", width: "min(880px, 92%)", height: 392, border: "1px solid rgba(255,255,255,.6)" }}>
       {/* rail */}
       <div style={{ background: "var(--surface-brand)", padding: "16px 12px", display: "flex", flexDirection: "column", gap: 4 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "2px 6px 14px" }}>
@@ -94,7 +94,7 @@ function AppPreview() {
 
 function Callout({ children, style }) {
   return (
-    <div style={{ position: "absolute", background: "var(--surface-brand)", color: "#fff", fontSize: 13, fontWeight: "var(--fw-semibold)", lineHeight: 1.35, padding: "12px 15px", borderRadius: 12, maxWidth: 210, boxShadow: "0 12px 30px rgba(0,36,63,.4)", zIndex: 3, ...style }}>{children}</div>
+    <div className="tp-callout" style={{ position: "absolute", background: "var(--surface-brand)", color: "#fff", fontSize: 13, fontWeight: "var(--fw-semibold)", lineHeight: 1.35, padding: "12px 15px", borderRadius: 12, maxWidth: 210, boxShadow: "0 12px 30px rgba(0,36,63,.4)", zIndex: 3, ...style }}>{children}</div>
   );
 }
 
@@ -103,7 +103,7 @@ export function Header() {
     <>
       <NavBar active="producto" />
       <section style={{ background: "#fff", textAlign: "center", padding: "62px 28px 0" }}>
-        <div style={{ display: "inline-flex", alignItems: "center", gap: 9, fontSize: 15 }}>
+        <div style={{ display: "inline-flex", alignItems: "center", gap: 9, fontSize: 15, flexWrap: "wrap", justifyContent: "center" }}>
           <Star />
           <span style={{ fontWeight: "var(--fw-bold)", color: "var(--text-strong)", whiteSpace: "nowrap" }}>4.8 estrellas</span>
           <span style={{ color: "var(--border-strong)" }}>|</span>

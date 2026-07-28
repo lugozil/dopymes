@@ -155,7 +155,7 @@ export function PriceHero() {
         </div>
 
         {/* cards */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, alignItems: "start" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24, alignItems: "start" }}>
           {PLANS.map((p) => <PlanCard key={p.name} plan={p} annual={annual} />)}
         </div>
       </div>

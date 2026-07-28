@@ -27,7 +27,7 @@ export function GetStarted({ title = "¿Listo para empezar?", subtitle = "Explor
         <h2 style={{ fontSize: "clamp(26px,3vw,40px)", fontWeight: "var(--fw-bold)", letterSpacing: "-0.015em", color: "#fff", marginBottom: 40, maxWidth: 760 }}>
           {title} <span style={{ color: "rgba(255,255,255,.5)" }}>{subtitle}</span>
         </h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 22 }}>
           <StartCard icon="internet" title="Elige un número nuevo" sub="o usa el que ya tienes" />
           <StartCard icon="analisis" title="Mira una demo" sub="y empieza con TodoPymes" />
           <StartCard icon="estadistica" title="Ve los precios," sub="elige un plan y empieza" />
@@ -72,12 +72,12 @@ function BigBtn({ label, dark, onClick }) {
 export function FinalCta({ title = "El dinero está", accent = "en juego" }) {
   return (
     <section style={{ background: "#fff" }}>
-      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "84px 28px 64px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
+      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "84px 28px 64px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 48, alignItems: "center" }}>
         <h2 style={{ fontSize: "clamp(32px,3.6vw,54px)", fontWeight: "var(--fw-black)", letterSpacing: "-0.03em", lineHeight: 1.1, color: "var(--text-strong)", margin: 0 }}>
           <div>{title}</div>
           <div style={{ color: "var(--tp-azul-acento)" }}>{accent}</div>
         </h2>
-        <div style={{ display: "flex", gap: 18 }}>
+        <div style={{ display: "flex", gap: 18, flexWrap: "wrap" }}>
           <BigBtn label="Pruébalo gratis" dark onClick={() => window.__openModal && window.__openModal("cta")} />
           <BigBtn label="Hablar con ventas" onClick={() => window.location.href = "TodoPymes Contacto.html"} />
         </div>
@@ -98,7 +98,7 @@ export function Footer() {
   return (
     <footer style={{ background: "#fff", borderTop: "1px solid var(--border-subtle)" }}>
       <div style={{ maxWidth: 1240, margin: "0 auto", padding: "56px 28px 40px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1.3fr", gap: 32 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 32 }}>
           {cols.map((c, ci) => (
             <div key={c[0]}>
               <div style={{ fontSize: 16, fontWeight: "var(--fw-bold)", color: "var(--text-strong)", marginBottom: 18 }}>{c[0]}</div>

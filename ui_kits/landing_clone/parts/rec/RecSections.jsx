@@ -16,7 +16,7 @@ function ProgramRow({ tone, eyebrow, eyebrowColor, title, body, cta, visual, rev
     </div>
   );
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderRadius: 18, overflow: "hidden", background: tone.light }}>
+    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", borderRadius: 18, overflow: "hidden", background: tone.light }}>
       {reverse ? <>{text}<div style={{ background: tone.dark, display: "flex", alignItems: "center", justifyContent: "center", padding: 36, minHeight: 320 }}>{visual}</div></>
                : <><div style={{ background: tone.dark, display: "flex", alignItems: "center", justifyContent: "center", padding: 36, minHeight: 320 }}>{visual}</div>{text}</>}
     </div>
@@ -63,7 +63,7 @@ function ExpertCard() {
 function TechGrid() {
   const set = ["mensajes", "nube", "calendario", "usuario", "analisis", "internet", "estadistica"];
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, width: "min(340px,100%)" }}>
+    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(65px, 1fr))", gap: 12, width: "min(340px,100%)" }}>
       {set.map((n, i) => (
         <span key={i} style={{ aspectRatio: "1", background: "#fff", borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "var(--shadow-sm)" }}>
           <img src={ICONS + n + ".png"} style={{ width: "48%", height: "48%", objectFit: "contain" }} alt="" />
@@ -110,7 +110,7 @@ export function PartnerStory() {
     <section style={{ background: "var(--tp-slate-50)" }}>
       <div style={{ maxWidth: 1240, margin: "0 auto", padding: "84px 28px" }}>
         <h2 style={{ fontSize: "clamp(26px,3vw,40px)", fontWeight: "var(--fw-black)", letterSpacing: "-0.02em", lineHeight: 1.1, color: "var(--text-strong)", marginBottom: 36 }}>Cómo FERREMAX hizo crecer su negocio con TodoPymes</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 40, alignItems: "center" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 40, alignItems: "center" }}>
           <div style={{ position: "relative", borderRadius: 16, overflow: "hidden" }}>
             <image-slot id="tp-rec-video" shape="rounded" radius="16" placeholder="Suelta el video del caso de éxito" style={{ display: "block", width: "100%", height: 340, background: "var(--tp-blue-200)" }}></image-slot>
             <span style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none" }}>
@@ -150,7 +150,7 @@ export function Benefits() {
           <div>que impulsan tu éxito</div>
         </h2>
         <p style={{ textAlign: "center", fontSize: 16, color: "var(--text-muted)", maxWidth: 560, margin: "0 auto 44px", lineHeight: 1.5 }}>Al unirte al Programa de Partners de TodoPymes te conviertes en parte de una comunidad vibrante de profesionales con visión de futuro.</p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 22 }}>
           {cards.map((c, i) => (
             <div key={i} style={{ border: "1px solid var(--border-subtle)", borderRadius: 16, overflow: "hidden", boxShadow: "var(--shadow-xs)" }}>
               <div style={{ background: c.top, height: 84, display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -181,7 +181,7 @@ export function SuccessLooks() {
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <h2 style={{ textAlign: "center", fontSize: "clamp(28px,3.6vw,50px)", fontWeight: "var(--fw-black)", letterSpacing: "-0.02em", color: "#fff", marginBottom: 12 }}>Así se ve el éxito</h2>
         <p style={{ textAlign: "center", fontSize: 16, color: "rgba(255,255,255,.6)", maxWidth: 640, margin: "0 auto 44px", lineHeight: 1.5 }}>Ya sea un freelancer o un equipo de 100 personas, ganas cada vez que un referido se suscribe a TodoPymes.</p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 22 }}>
           {cards.map((c, i) => (
             <div key={i} style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 14, padding: "26px 24px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 9, marginBottom: 16 }}>
@@ -208,7 +208,7 @@ export function OtherWays() {
     <section style={{ background: "#fff" }}>
       <div style={{ maxWidth: 1240, margin: "0 auto", padding: "84px 28px" }}>
         <h2 style={{ textAlign: "center", fontSize: "clamp(28px,3.6vw,50px)", fontWeight: "var(--fw-black)", letterSpacing: "-0.02em", lineHeight: 1.1, color: "var(--text-strong)", marginBottom: 44 }}>Otras formas de ser partner de TodoPymes</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 24 }}>
           {cards.map((c, i) => (
             <div key={i} style={{ border: "1px solid var(--border-subtle)", borderRadius: 18, overflow: "hidden", boxShadow: "var(--shadow-xs)" }}>
               <image-slot id={c.id} shape="rect" placeholder="Ilustración de marca" style={{ display: "block", width: "100%", height: 220, background: i ? "var(--tp-blue-100)" : "var(--tp-warning-soft)" }}></image-slot>
@@ -239,7 +239,7 @@ const inputStyle = { fontFamily: "var(--font-sans)", fontSize: 15, color: "var(-
 export function GetInTouch() {
   return (
     <section style={{ background: "var(--tp-slate-50)" }}>
-      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "84px 28px", display: "grid", gridTemplateColumns: "0.9fr 1.1fr", gap: 48, alignItems: "start" }}>
+      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "84px 28px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 48, alignItems: "start" }}>
         <div>
           <h2 style={{ fontSize: "clamp(34px,4.4vw,60px)", fontWeight: "var(--fw-black)", letterSpacing: "-0.03em", color: "var(--text-strong)", margin: 0 }}>Hablemos</h2>
           <p style={{ fontSize: 17, lineHeight: 1.55, color: "var(--text-muted)", margin: "18px 0 32px", maxWidth: 400 }}>Reúnete con nuestro equipo de Alianzas para conocer más y conversar ideas. Encontremos el ajuste ideal para tu negocio.</p>
@@ -253,7 +253,7 @@ export function GetInTouch() {
         </div>
 
         <div style={{ background: "#fff", border: "1px solid var(--border-subtle)", borderRadius: 18, padding: "32px 34px", boxShadow: "var(--shadow-sm)" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18, marginBottom: 18 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 18, marginBottom: 18 }}>
             <Field label="Nombre*"><input style={inputStyle} placeholder="Nombre" /></Field>
             <Field label="Apellido*"><input style={inputStyle} placeholder="Apellido" /></Field>
           </div>

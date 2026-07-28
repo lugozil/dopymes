@@ -146,7 +146,7 @@ function MockChart() {
 function MockIntegrations() {
   const set = ["mensajes", "nube", "calendario", "usuario", "analisis", "internet", "estadistica", "configuracion", "equipo", "agenda", "informacion", "ajustes"];
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10, paddingBottom: 30 }}>
+    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(70px, 1fr))", gap: 10, paddingBottom: 30 }}>
       {set.map((n, i) => (
         <div key={i} style={{ aspectRatio: "1", background: "#fff", border: "1px solid var(--border-subtle)", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "var(--shadow-xs)" }}>
           <img src={ICONS + n + ".png"} style={{ width: "46%", height: "46%", objectFit: "contain" }} alt="" />
@@ -174,7 +174,7 @@ export function Features() {
           <span style={{ display: "inline-flex", transform: "rotate(-3deg)", background: "var(--tp-azul-acento)", color: "#fff", borderRadius: 14, padding: "4px 20px", boxShadow: "var(--shadow-brand)" }}>Hola</span>
           con TodoPymes
         </h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 22 }}>
           {cards.map((c, i) => <CardShell key={i} title={c.t} cta={c.c}>{c.m}</CardShell>)}
         </div>
       </section>

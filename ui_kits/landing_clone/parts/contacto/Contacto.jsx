@@ -30,7 +30,7 @@ export function Contacto() {
           Elige el canal que prefieras — nuestro equipo responde rápido y sin vueltas.
         </p>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22, marginTop: 52, textAlign: "left" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 22, marginTop: 52, textAlign: "left" }}>
           {OPTIONS.map((o, i) => (
             <div key={i} style={{ background: "#fff", border: "1px solid var(--border-subtle)", borderRadius: 18, padding: "30px 26px", boxShadow: "var(--shadow-xs)", display: "flex", flexDirection: "column" }}>
               <span style={{ width: 50, height: 50, borderRadius: 14, background: o.tone, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
