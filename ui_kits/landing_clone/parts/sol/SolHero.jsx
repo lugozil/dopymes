@@ -42,7 +42,7 @@ function ApptCard() {
 export function SolHero() {
   return (
     <section style={{ background: "#fff" }}>
-      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "64px 28px 56px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 56, alignItems: "center" }}>
+      <div className="tp-grid-2" style={{ maxWidth: 1240, margin: "0 auto", padding: "64px 28px 56px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "center" }}>
         {/* text */}
         <div>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--tp-azul-acento)", color: "#fff", fontSize: 13.5, fontWeight: "var(--fw-bold)", padding: "7px 15px", borderRadius: "var(--radius-pill)", whiteSpace: "nowrap" }}>
@@ -62,7 +62,7 @@ export function SolHero() {
         </div>
 
         {/* collage */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 16, minHeight: 440 }}>
+        <div className="tp-grid-2" style={{ display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 16, minHeight: 440 }}>
           <image-slot id="tp-sol-hero-photo" shape="rounded" radius="18" placeholder="Suelta una foto de un técnico / servicio a domicilio" style={{ display: "block", width: "100%", height: "100%" }}></image-slot>
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             <div style={{ background: "var(--tp-slate-100)", borderRadius: 18, padding: 18, display: "flex", alignItems: "center", justifyContent: "center", flex: "0 0 44%" }}>

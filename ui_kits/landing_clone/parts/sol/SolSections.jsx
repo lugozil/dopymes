@@ -13,7 +13,7 @@ export function SolDarkCards() {
   ];
   return (
     <section style={{ background: "var(--tp-blue-950)", padding: "70px 28px" }}>
-      <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 22 }}>
+      <div className="tp-grid-3" style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
         {cards.map((c, i) => (
           <div key={i} style={{ background: "rgba(255,255,255,.03)", border: "1px solid rgba(255,255,255,.08)", borderRadius: 16, padding: "26px 26px 30px" }}>
             <span style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(12,106,249,.16)", border: "1px solid rgba(12,106,249,.3)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 18 }}>
@@ -31,7 +31,7 @@ export function SolDarkCards() {
 /* --- Triplete de feature cards (icono + título + body) --- */
 function FeatureTriplet({ items }) {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 22, marginTop: 56 }}>
+    <div className="tp-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22, marginTop: 56 }}>
       {items.map((it, i) => (
         <div key={i} style={{ border: "1px solid var(--border-subtle)", borderRadius: 16, padding: "22px 24px 26px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
@@ -58,7 +58,7 @@ export function SolSection({ title, accent, body, textSide = "left", panel, item
   return (
     <section style={{ background: bg }}>
       <div style={{ maxWidth: 1240, margin: "0 auto", padding: "84px 28px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 48, alignItems: "center" }}>
+        <div className="tp-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
           {textSide === "left" ? <>{text}{panel}</> : <>{panel}{text}</>}
         </div>
         <FeatureTriplet items={items} />
@@ -189,7 +189,7 @@ export function PanelInsights() {
 export function SolVideo() {
   return (
     <section style={{ background: "#fff" }}>
-      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "20px 28px 84px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 48, alignItems: "center" }}>
+      <div className="tp-grid-2" style={{ maxWidth: 1240, margin: "0 auto", padding: "20px 28px 84px", display: "grid", gridTemplateColumns: "0.85fr 1.15fr", gap: 48, alignItems: "center" }}>
         <div>
           <p style={{ fontSize: "clamp(22px,2vw,30px)", fontWeight: "var(--fw-bold)", lineHeight: 1.3, letterSpacing: "-0.01em", color: "var(--text-strong)", margin: 0 }}>
             "Estamos tan seguros que lo decimos: súbete a TodoPymes. Ahórrate el tiempo, ahórrate el dolor de cabeza."
@@ -219,7 +219,7 @@ export function SolTestimonials() {
     <section style={{ background: "var(--tp-blue-950)", padding: "84px 28px" }}>
       <div style={{ maxWidth: 1240, margin: "0 auto" }}>
         <h2 style={{ textAlign: "center", fontSize: "clamp(26px,3vw,40px)", fontWeight: "var(--fw-black)", letterSpacing: "-0.02em", color: "#fff", marginBottom: 44 }}>Con la confianza de equipos de servicios a domicilio</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 22 }}>
+        <div className="tp-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
           {t.map((c, i) => (
             <div key={i} style={{ background: "rgba(255,255,255,.03)", border: "1px solid rgba(255,255,255,.08)", borderRadius: 16, padding: 26 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12, paddingBottom: 18, borderBottom: "1px solid rgba(255,255,255,.1)" }}>
@@ -240,7 +240,7 @@ export function SolTools() {
   const tiles = ["mensajes", "nube", "calendario", "usuario", "analisis", "internet", "estadistica"];
   return (
     <section style={{ background: "#fff" }}>
-      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "84px 28px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 48, alignItems: "center" }}>
+      <div className="tp-grid-2" style={{ maxWidth: 1240, margin: "0 auto", padding: "84px 28px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
         <div>
           <h2 style={{ fontSize: "clamp(28px,3.4vw,46px)", fontWeight: "var(--fw-black)", letterSpacing: "-0.02em", lineHeight: 1.08, color: "var(--text-strong)", margin: 0 }}>TodoPymes mejora tus otras herramientas</h2>
           <p style={{ fontSize: "clamp(15px,1.3vw,18px)", lineHeight: 1.55, color: "var(--text-muted)", margin: "18px 0 0", maxWidth: 440 }}>
@@ -253,7 +253,7 @@ export function SolTools() {
             <img src={LOGOS + "icono-white.png"} style={{ width: 34, height: 34 }} alt="TodoPymes" />
           </span>
           <span style={{ width: 22, height: 22, borderRadius: "50%", background: "var(--tp-azul-acento)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14 }}>+</span>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(58px, 1fr))", gap: 12 }}>
+          <div className="tp-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
             {tiles.map((n, i) => (
               <span key={i} style={{ width: 58, height: 58, borderRadius: 14, background: "#fff", border: "1px solid var(--border-subtle)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "var(--shadow-xs)" }}>
                 <img src={ICONS + n + ".png"} style={{ width: 26, height: 26 }} alt="" />

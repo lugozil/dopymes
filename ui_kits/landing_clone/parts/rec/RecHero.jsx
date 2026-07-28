@@ -51,7 +51,7 @@ function Orbit() {
 export function RecHero() {
   return (
     <section style={{ background: "#fff" }}>
-      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "64px 28px 40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 48, alignItems: "center" }}>
+      <div className="tp-grid-2" style={{ maxWidth: 1240, margin: "0 auto", padding: "64px 28px 40px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
         <div>
           <h1 style={{ fontFamily: "var(--font-sans)", fontWeight: "var(--fw-black)", fontSize: "clamp(40px,5.4vw,74px)", lineHeight: 1.02, letterSpacing: "-0.035em", color: "var(--text-strong)", margin: 0 }}>
             Crece tu negocio como <span style={{ color: "var(--tp-azul-acento)" }}>partner</span> de TodoPymes
@@ -69,10 +69,18 @@ export function RecHero() {
       {/* tira de confianza */}
       <div style={{ maxWidth: 1240, margin: "0 auto", padding: "30px 28px 64px" }}>
         <p style={{ textAlign: "center", fontSize: 17, color: "var(--text-muted)", marginBottom: 26 }}>Más de 2,000 partners hacen crecer su negocio con TodoPymes</p>
-        <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 26, opacity: 0.5 }}>
-          {["FERREMAX", "Andina VC", "HubLatam", "JOBBER", "bengali", "CM Integrado"].map((n, i) => (
-            <span key={n} style={{ fontFamily: "var(--font-sans)", fontWeight: "var(--fw-black)", fontSize: i % 2 ? 20 : 23, letterSpacing: i % 2 ? "0.06em" : "-0.01em", color: "var(--tp-slate-700)", textTransform: i % 2 ? "uppercase" : "none" }}>{n}</span>
-          ))}
+        <div className="tp-marquee-viewport" style={{ opacity: 0.5 }}>
+          <div className="tp-marquee-track" style={{ gap: 52 }}>
+            {(() => {
+              const names = ["FERREMAX", "Andina VC", "HubLatam", "JOBBER", "bengali", "CM Integrado"];
+              return [...names, ...names].map((n, i) => {
+                const o = i % names.length;
+                return (
+                  <span key={i} style={{ flex: "none", whiteSpace: "nowrap", fontFamily: "var(--font-sans)", fontWeight: "var(--fw-black)", fontSize: o % 2 ? 20 : 23, letterSpacing: o % 2 ? "0.06em" : "-0.01em", color: "var(--tp-slate-700)", textTransform: o % 2 ? "uppercase" : "none" }}>{n}</span>
+                );
+              });
+            })()}
+          </div>
         </div>
       </div>
     </section>
@@ -89,11 +97,11 @@ export function WhyPartner() {
   ];
   return (
     <section style={{ background: "var(--tp-blue-950)", padding: "80px 28px" }}>
-      <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 48 }}>
+      <div className="tp-grid-2" style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "0.8fr 1.2fr", gap: 48 }}>
         <h2 style={{ fontSize: "clamp(30px,3.6vw,50px)", fontWeight: "var(--fw-black)", letterSpacing: "-0.02em", lineHeight: 1.08, color: "#fff", margin: 0 }}>
           ¿Por qué ser partner de TodoPymes?
         </h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "32px 40px" }}>
+        <div className="tp-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px 40px" }}>
           {items.map((it, i) => (
             <div key={i}>
               <div style={{ display: "flex", alignItems: "center", gap: 11, marginBottom: 10 }}>

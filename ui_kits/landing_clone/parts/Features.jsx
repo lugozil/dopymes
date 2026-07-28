@@ -7,13 +7,19 @@ import React from "react";
 
 function TrustStrip() {
   const names = ["SIGNAL", "FOCUS", "XOCO HOUSE", "LUMOTICA", "GLAMOUR SPA", "CLÍNICA VIDA"];
+  const loop = [...names, ...names];
   return (
     <section style={{ maxWidth: 1240, margin: "0 auto", padding: "44px 28px 8px" }}>
       <p style={{ textAlign: "center", fontSize: 15, color: "var(--text-muted)", marginBottom: 26 }}>Impulsando Pymes en Europa y Latinoamérica</p>
-      <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 26, opacity: 0.55 }}>
-        {names.map((n, i) => (
-          <span key={n} style={{ fontFamily: "var(--font-sans)", fontWeight: i % 2 ? "var(--fw-black)" : "var(--fw-bold)", fontSize: i % 3 === 0 ? 22 : 18, letterSpacing: i % 2 ? "0.08em" : "-0.01em", color: "var(--tp-slate-700)", textTransform: i % 2 ? "uppercase" : "none" }}>{n}</span>
-        ))}
+      <div className="tp-marquee-viewport" style={{ opacity: 0.55 }}>
+        <div className="tp-marquee-track" style={{ gap: 52 }}>
+          {loop.map((n, i) => {
+            const o = i % names.length;
+            return (
+              <span key={i} style={{ flex: "none", whiteSpace: "nowrap", fontFamily: "var(--font-sans)", fontWeight: o % 2 ? "var(--fw-black)" : "var(--fw-bold)", fontSize: o % 3 === 0 ? 22 : 18, letterSpacing: o % 2 ? "0.08em" : "-0.01em", color: "var(--tp-slate-700)", textTransform: o % 2 ? "uppercase" : "none" }}>{n}</span>
+            );
+          })}
+        </div>
       </div>
       <div style={{ borderBottom: "1px solid var(--border-subtle)", marginTop: 30 }} />
     </section>
@@ -146,7 +152,7 @@ function MockChart() {
 function MockIntegrations() {
   const set = ["mensajes", "nube", "calendario", "usuario", "analisis", "internet", "estadistica", "configuracion", "equipo", "agenda", "informacion", "ajustes"];
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(70px, 1fr))", gap: 10, paddingBottom: 30 }}>
+    <div className="tp-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10, paddingBottom: 30 }}>
       {set.map((n, i) => (
         <div key={i} style={{ aspectRatio: "1", background: "#fff", border: "1px solid var(--border-subtle)", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "var(--shadow-xs)" }}>
           <img src={ICONS + n + ".png"} style={{ width: "46%", height: "46%", objectFit: "contain" }} alt="" />
@@ -174,7 +180,7 @@ export function Features() {
           <span style={{ display: "inline-flex", transform: "rotate(-3deg)", background: "var(--tp-azul-acento)", color: "#fff", borderRadius: 14, padding: "4px 20px", boxShadow: "var(--shadow-brand)" }}>Hola</span>
           con TodoPymes
         </h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 22 }}>
+        <div className="tp-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
           {cards.map((c, i) => <CardShell key={i} title={c.t} cta={c.c}>{c.m}</CardShell>)}
         </div>
       </section>

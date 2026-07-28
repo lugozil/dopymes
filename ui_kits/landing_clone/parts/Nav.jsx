@@ -6,6 +6,7 @@ import React from "react";
    sección actual.
    ============================================================ */
 export function NavBar({ active = "" }) {
+  const [open, setOpen] = React.useState(false);
   const links = [
     { label: "Producto", href: "TodoPymes Web.html", key: "producto" },
     { label: "Soluciones", href: "TodoPymes Soluciones.html", key: "soluciones" },
@@ -30,9 +31,32 @@ export function NavBar({ active = "" }) {
             <a href="https://app.dopymes.com/" target="_blank" rel="noopener" style={{ fontSize: 15, fontWeight: "var(--fw-medium)", color: "var(--text-strong)" }}>Iniciar sesión</a>
             <Button variant="outline" size="sm" onClick={() => window.location.href = "TodoPymes Contacto.html"}>Hablar con ventas</Button>
           </div>
-          <Button variant="primary" size="sm" onClick={() => window.__openModal && window.__openModal("cta")}>Pruébalo gratis</Button>
+          <span className="tp-nav-primary-btn">
+            <Button variant="primary" size="sm" onClick={() => window.__openModal && window.__openModal("cta")}>Pruébalo gratis</Button>
+          </span>
+          <button
+            className="tp-nav-toggle"
+            aria-label={open ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            style={{ display: "none", flex: "none", width: 40, height: 40, border: "1px solid var(--border-default)", borderRadius: 10, background: "#fff", alignItems: "center", justifyContent: "center", cursor: "pointer", fontSize: 18, lineHeight: 1, color: "var(--text-strong)" }}
+          >
+            {open ? "✕" : "☰"}
+          </button>
         </div>
       </nav>
+      {open && (
+        <div className="tp-nav-mobile-panel" style={{ borderTop: "1px solid var(--border-subtle)", background: "#fff", padding: "8px 28px 24px", display: "flex", flexDirection: "column" }}>
+          {links.map((l) => (
+            <a key={l.key} href={l.href} style={{ padding: "13px 2px", fontSize: 16, fontWeight: active === l.key ? "var(--fw-semibold)" : "var(--fw-medium)", color: active === l.key ? "var(--tp-azul-acento)" : "var(--text-strong)", borderBottom: "1px solid var(--border-subtle)" }}>{l.label}</a>
+          ))}
+          <a href="https://app.dopymes.com/" target="_blank" rel="noopener" style={{ padding: "13px 2px", fontSize: 16, fontWeight: "var(--fw-medium)", color: "var(--text-strong)", borderBottom: "1px solid var(--border-subtle)" }}>Iniciar sesión</a>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 16 }}>
+            <Button variant="outline" fullWidth onClick={() => window.location.href = "TodoPymes Contacto.html"}>Hablar con ventas</Button>
+            <Button variant="primary" fullWidth onClick={() => window.__openModal && window.__openModal("cta")}>Pruébalo gratis</Button>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

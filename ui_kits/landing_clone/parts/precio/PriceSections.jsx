@@ -128,7 +128,7 @@ export function AddOns() {
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "84px 28px" }}>
         <h2 style={{ fontSize: "clamp(26px,3vw,42px)", fontWeight: "var(--fw-black)", letterSpacing: "-0.02em", color: "var(--text-strong)", marginBottom: 8 }}>Complementos</h2>
         <p style={{ fontSize: 16, color: "var(--text-muted)", marginBottom: 36 }}>Potencia cualquier plan con lo que tu negocio necesite.</p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 22 }}>
+        <div className="tp-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
           {items.map((a, i) => (
             <div key={i} style={{ background: "#fff", border: "1px solid var(--border-subtle)", borderRadius: 18, padding: "26px 26px 28px", boxShadow: "var(--shadow-xs)" }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 18 }}>
@@ -204,7 +204,7 @@ export function SwitchFree() {
             <Button variant="secondary" size="md">Migra tu número</Button>
           </div>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 22 }}>
+        <div className="tp-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
           {cards.map((c, i) => (
             <div key={i} style={{ background: "rgba(255,255,255,.7)", border: "1px solid var(--tp-blue-200)", borderRadius: 18, padding: "26px 26px 28px" }}>
               <span style={{ width: 46, height: 46, borderRadius: 12, background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 18, boxShadow: "var(--shadow-xs)" }}>

@@ -47,8 +47,13 @@ html { overflow-x: hidden; }
 
 @media (max-width: 780px) {
   .tp-nav-links,
-  .tp-nav-secondary { display: none !important; }
+  .tp-nav-secondary,
+  .tp-nav-primary-btn { display: none !important; }
+  .tp-nav-toggle { display: flex !important; }
   .tp-nav-row { gap: 14px !important; }
+}
+@media (min-width: 781px) {
+  .tp-nav-mobile-panel { display: none !important; }
 }
 
 @media (max-width: 760px) {
@@ -66,4 +71,68 @@ html { overflow-x: hidden; }
 .tp-compare-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 @media (max-width: 720px) {
   .tp-compare-scroll > * { min-width: 640px; }
+}
+
+/* Franja de logos que se desplaza en lugar de amontonarse al no caber */
+.tp-marquee-viewport {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+.tp-marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: tp-marquee 26s linear infinite;
+}
+@keyframes tp-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tp-marquee-track { animation: none; }
+}
+
+/* ============================================================
+   Grid breakpoints — el escritorio SIEMPRE usa el valor inline
+   original (columnas exactas del diseño). Estas reglas sólo
+   colapsan el layout por debajo del breakpoint; nunca alteran
+   cuántas columnas caben en escritorio (a diferencia de un
+   auto-fit/minmax puro, que puede meter más columnas de las
+   que el diseño pedía en pantallas anchas).
+   ============================================================ */
+
+/* Grillas de 3 tarjetas (features, planes, add-ons, etc.) */
+@media (max-width: 900px) {
+  .tp-grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 560px) {
+  .tp-grid-3 { grid-template-columns: 1fr !important; }
+}
+
+/* Grillas de 4 íconos pequeños dentro de una tarjeta */
+@media (max-width: 420px) {
+  .tp-grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* Grilla de 10 íconos de integraciones */
+@media (max-width: 900px) {
+  .tp-grid-10 { grid-template-columns: repeat(5, 1fr) !important; }
+}
+@media (max-width: 560px) {
+  .tp-grid-10 { grid-template-columns: repeat(3, 1fr) !important; }
+}
+
+/* Splits de 2 columnas (texto + imagen/panel), cualquier ratio fr */
+@media (max-width: 820px) {
+  .tp-grid-2 { grid-template-columns: 1fr !important; }
+}
+
+/* Footer: 4 columnas de enlaces */
+@media (max-width: 900px) {
+  .tp-grid-4-footer { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 560px) {
+  .tp-grid-4-footer { grid-template-columns: 1fr !important; }
 }

@@ -109,8 +109,8 @@ export function Header() {
           <span style={{ color: "var(--border-strong)" }}>|</span>
           <span style={{ color: "var(--text-muted)", whiteSpace: "nowrap" }}>3,000+ reseñas</span>
         </div>
-        <h1 style={{ fontFamily: "var(--font-sans)", fontWeight: "var(--fw-black)", fontSize: "clamp(34px, 5vw, 66px)", lineHeight: 1.08, letterSpacing: "-0.03em", color: "var(--text-strong)", maxWidth: 1080, margin: "26px auto 0" }}>
-          Nunca más pierdas un lead<br />por no responder a tiempo
+        <h1 style={{ fontFamily: "var(--font-sans)", fontWeight: "var(--fw-black)", fontSize: "clamp(23px, 6.4vw, 66px)", lineHeight: 1.12, letterSpacing: "-0.03em", color: "var(--text-strong)", maxWidth: 1080, margin: "26px auto 0", textWrap: "balance" }}>
+          Nunca más pierdas un lead por no responder a tiempo
         </h1>
         <p style={{ fontSize: "clamp(16px, 1.5vw, 20px)", lineHeight: 1.5, color: "var(--text-muted)", maxWidth: 720, margin: "24px auto 0" }}>
           TodoPymes es el centro de mando todo-en-uno que reúne Landings, WhatsApp, CRM y agenda en un solo lugar — para que tu negocio venda solo, incluso fuera de horario.
