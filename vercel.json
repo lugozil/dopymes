@@ -9,6 +9,14 @@
     { "source": "/privacidad", "destination": "/TodoPymes%20Privacidad.html" }
   ],
   "redirects": [
+    { "source": "/TodoPymes%20Web.html", "destination": "/", "permanent": true },
+    { "source": "/TodoPymes%20Soluciones.html", "destination": "/soluciones", "permanent": true },
+    { "source": "/TodoPymes%20Recursos.html", "destination": "/recursos", "permanent": true },
+    { "source": "/TodoPymes%20Precios.html", "destination": "/precios", "permanent": true },
+    { "source": "/TodoPymes%20Contacto.html", "destination": "/contacto", "permanent": true },
+    { "source": "/TodoPymes%20Terminos.html", "destination": "/terminos", "permanent": true },
+    { "source": "/TodoPymes%20Privacidad.html", "destination": "/privacidad", "permanent": true },
+
     { "source": "/TodoPymes Web.html", "destination": "/", "permanent": true },
     { "source": "/TodoPymes Soluciones.html", "destination": "/soluciones", "permanent": true },
     { "source": "/TodoPymes Recursos.html", "destination": "/recursos", "permanent": true },
