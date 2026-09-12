@@ -116,8 +116,8 @@ export function Header() {
           TodoPymes es el centro de mando todo-en-uno que reúne Landings, WhatsApp, CRM y agenda en un solo lugar — para que tu negocio venda solo, incluso fuera de horario.
         </p>
         <div style={{ display: "flex", gap: 14, justifyContent: "center", marginTop: 32 }}>
-          <Button variant="primary" size="lg" onClick={() => window.__openModal && window.__openModal("cta")}>Pruébalo gratis</Button>
-          <Button variant="outline" size="lg" iconLeft={<span style={{ fontSize: 12 }}>▶</span>} onClick={() => window.__openModal && window.__openModal("video")}>Ver cómo funciona</Button>
+          <Button variant="primary" size="lg" onClick={() => window.openWA("Hola, quiero probar TodoPymes gratis.")}>Pruébalo gratis</Button>
+          <Button variant="outline" size="lg" onClick={() => window.openWA("Hola, quiero ver cómo funciona TodoPymes.")}>Ver cómo funciona</Button>
         </div>
         <p style={{ fontSize: 14, color: "var(--text-muted)", marginTop: 26 }}>
           Disponible en <b style={{ color: "var(--text-strong)" }}>iOS, Android, Web</b> y <b style={{ color: "var(--text-strong)" }}>WhatsApp API</b>

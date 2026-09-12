@@ -85,26 +85,26 @@ export function Programs() {
             eyebrow="Partners afiliados" eyebrowColor="var(--tp-azul-acento)"
             title="Empieza a ganar refiriendo a tu comunidad a TodoPymes"
             body="Un registro rápido, seguimiento simple de referidos y comisiones competitivas hacen fácil monetizar tu plataforma y ayudar a las PyMEs a descubrir TodoPymes."
-            cta="Aplica ahora" visual={<ReferralCard />} onCta={() => window.__openModal && window.__openModal("affiliate")} />
+            cta="Aplica ahora" visual={<ReferralCard />} onCta={() => window.openWA("Hola, quiero aplicar al programa de afiliados de TodoPymes.")} />
           <ProgramRow
             tone={{ light: "var(--tp-blue-50)", dark: "linear-gradient(140deg, var(--tp-blue-400), var(--tp-azul-acento))" }}
             eyebrow="Partners de agencia" eyebrowColor="var(--tp-blue-700)" reverse
             title="Desbloquea revenue share multi-año como Experto Certificado"
             body="Amplía tus servicios y entrega valor inmediato con el centro de mando #1 en satisfacción al cliente, apalancando soporte exclusivo de go-to-market para acelerar el crecimiento."
-            cta="Conviértete en Experto" visual={<ExpertCard />} onCta={() => window.__openModal && window.__openModal("agency")} />
+            cta="Conviértete en Experto" visual={<ExpertCard />} onCta={() => window.openWA("Hola, quiero ser Experto Certificado de TodoPymes.")} />
           <ProgramRow
             tone={{ light: "var(--tp-success-soft)", dark: "linear-gradient(140deg, #bbe8cd, var(--tp-success-soft))" }}
             eyebrow="Partners de tecnología" eyebrowColor="#0f7a37"
             title="Llega a nuevas audiencias integrando tu producto con TodoPymes"
             body="Aprovecha las potentes APIs de TodoPymes para integrar mensajes, contactos y funciones con IA — potenciando tu plataforma, agilizando flujos y abriendo oportunidades de co-marketing."
-            cta="Conoce más" visual={<TechGrid />} onCta={() => window.__openModal && window.__openModal("tech")} />
+            cta="Conoce más" visual={<TechGrid />} onCta={() => window.openWA("Hola, quiero integrar mi producto con TodoPymes.")} />
         </div>
       </div>
     </section>
   );
 }
 
-/* ---- Caso de éxito (video) ---- */
+/* ---- Caso de éxito ---- */
 export function PartnerStory() {
   return (
     <section style={{ background: "var(--tp-slate-50)" }}>
@@ -112,10 +112,7 @@ export function PartnerStory() {
         <h2 style={{ fontSize: "clamp(26px,3vw,40px)", fontWeight: "var(--fw-black)", letterSpacing: "-0.02em", lineHeight: 1.1, color: "var(--text-strong)", marginBottom: 36 }}>Cómo FERREMAX hizo crecer su negocio con TodoPymes</h2>
         <div className="tp-grid-2" style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 40, alignItems: "center" }}>
           <div style={{ position: "relative", borderRadius: 16, overflow: "hidden" }}>
-            <image-slot id="tp-rec-video" shape="rounded" radius="16" placeholder="Suelta el video del caso de éxito" style={{ display: "block", width: "100%", height: 340, background: "var(--tp-blue-200)" }}></image-slot>
-            <span style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none" }}>
-              <span style={{ width: 68, height: 68, borderRadius: "50%", background: "var(--tp-azul-acento)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, paddingLeft: 5, boxShadow: "0 8px 24px rgba(0,0,0,.35)" }}>▶</span>
-            </span>
+            <image-slot id="tp-rec-video" src="ilustraciones/movil.png" shape="rounded" radius="16" fit="contain" placeholder="Suelta la imagen del caso de éxito" style={{ display: "block", width: "100%", height: 340, background: "var(--tp-blue-100)" }}></image-slot>
           </div>
           <div>
             <p style={{ fontSize: "clamp(18px,1.7vw,23px)", fontWeight: "var(--fw-semibold)", lineHeight: 1.35, color: "var(--text-strong)", margin: 0 }}>
@@ -201,8 +198,8 @@ export function SuccessLooks() {
 /* ---- Other ways to partner (2 cards ilustradas) ---- */
 export function OtherWays() {
   const cards = [
-    { id: "tp-rec-vc", t: "Ofrece un beneficio a tu comunidad VC & startup", b: "Dale a tus empresas de portafolio y redes un descuento exclusivo de TodoPymes, ayudándoles a escalar más rápido con comunicaciones de negocio modernas y flexibles." },
-    { id: "tp-rec-franchise", t: "Crece como partner de franquicias", b: "Mantén bajos los costos de los franquiciados mientras impulsas ventas y entregas mejores experiencias, todo con un sistema pensado para negocios multi-sucursal en crecimiento." },
+    { id: "tp-rec-vc", img: "ilustraciones/integraciones.png", msg: "Hola, quiero ofrecer TodoPymes a mi comunidad VC & startup.", t: "Ofrece un beneficio a tu comunidad VC & startup", b: "Dale a tus empresas de portafolio y redes un descuento exclusivo de TodoPymes, ayudándoles a escalar más rápido con comunicaciones de negocio modernas y flexibles." },
+    { id: "tp-rec-franchise", img: "ilustraciones/automatizaciones.png", msg: "Hola, quiero ser partner de franquicias de TodoPymes.", t: "Crece como partner de franquicias", b: "Mantén bajos los costos de los franquiciados mientras impulsas ventas y entregas mejores experiencias, todo con un sistema pensado para negocios multi-sucursal en crecimiento." },
   ];
   return (
     <section style={{ background: "#fff" }}>
@@ -211,11 +208,11 @@ export function OtherWays() {
         <div className="tp-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
           {cards.map((c, i) => (
             <div key={i} style={{ border: "1px solid var(--border-subtle)", borderRadius: 18, overflow: "hidden", boxShadow: "var(--shadow-xs)" }}>
-              <image-slot id={c.id} shape="rect" placeholder="Ilustración de marca" style={{ display: "block", width: "100%", height: 220, background: i ? "var(--tp-blue-100)" : "var(--tp-warning-soft)" }}></image-slot>
+              <image-slot id={c.id} src={c.img} shape="rect" fit="contain" placeholder="Ilustración de marca" style={{ display: "block", width: "100%", height: 220, background: i ? "var(--tp-blue-100)" : "var(--tp-warning-soft)" }}></image-slot>
               <div style={{ padding: "26px 28px 30px" }}>
                 <h3 style={{ fontSize: 21, fontWeight: "var(--fw-bold)", color: "var(--text-strong)", marginBottom: 12 }}>{c.t}</h3>
                 <p style={{ fontSize: 15, lineHeight: 1.6, color: "var(--text-muted)", margin: 0 }}>{c.b}</p>
-                <a href="#" style={{ display: "inline-flex", alignItems: "center", gap: 8, marginTop: 20, fontSize: 16, fontWeight: "var(--fw-semibold)", color: "var(--tp-azul-acento)" }}>Contáctanos <span aria-hidden>→</span></a>
+                <a href={window.waUrl(c.msg)} target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: 8, marginTop: 20, fontSize: 16, fontWeight: "var(--fw-semibold)", color: "var(--tp-azul-acento)" }}>Contáctanos <span aria-hidden>→</span></a>
               </div>
             </div>
           ))}
@@ -261,7 +258,7 @@ export function GetInTouch() {
           <div style={{ marginBottom: 18 }}><Field label="Nombre de la empresa*"><input style={inputStyle} placeholder="Nombre de la empresa" /></Field></div>
           <div style={{ marginBottom: 18 }}><Field label="¿Cómo te gustaría ser partner?*"><div style={{ ...inputStyle, display: "flex", alignItems: "center", justifyContent: "space-between", color: "var(--text-muted)", cursor: "pointer" }}>Seleccionar <span style={{ fontSize: 11 }}>▾</span></div></Field></div>
           <div style={{ marginBottom: 24 }}><Field label="¿Algo más que el equipo deba saber?*"><textarea style={{ ...inputStyle, minHeight: 110, resize: "vertical" }} placeholder="Comentarios adicionales…"></textarea></Field></div>
-          <Button variant="primary" size="lg" fullWidth>Enviar</Button>
+          <Button variant="primary" size="lg" fullWidth onClick={() => window.openWA("Hola, quiero conversar con el equipo de Alianzas de TodoPymes.")}>Enviar</Button>
         </div>
       </div>
     </section>

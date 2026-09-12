@@ -185,8 +185,8 @@ export function PanelInsights() {
   );
 }
 
-/* --- Video testimonial (claro, una sola historia) --- */
-export function SolVideo() {
+/* --- Testimonial (claro, una sola historia) --- */
+export function SolStory() {
   return (
     <section style={{ background: "#fff" }}>
       <div className="tp-grid-2" style={{ maxWidth: 1240, margin: "0 auto", padding: "20px 28px 84px", display: "grid", gridTemplateColumns: "0.85fr 1.15fr", gap: 48, alignItems: "center" }}>
@@ -195,13 +195,10 @@ export function SolVideo() {
             "Estamos tan seguros que lo decimos: súbete a TodoPymes. Ahórrate el tiempo, ahórrate el dolor de cabeza."
           </p>
           <div style={{ margin: "20px 0 0", fontSize: 15, color: "var(--text-muted)" }}><b style={{ color: "var(--text-strong)" }}>Carolina Méndez</b> · Co-Fundadora @ Glamour Spa</div>
-          <div style={{ marginTop: 24 }}><Button variant="secondary" size="md">Leer la historia de Glamour Spa →</Button></div>
+          <div style={{ marginTop: 24 }}><Button variant="secondary" size="md" onClick={() => window.openWA("Hola, quiero conocer la historia de Glamour Spa con TodoPymes.")}>Leer la historia de Glamour Spa →</Button></div>
         </div>
         <div style={{ position: "relative", borderRadius: 16, overflow: "hidden" }}>
-          <image-slot id="tp-sol-video" shape="rounded" radius="16" placeholder="Suelta el video del caso de éxito" style={{ display: "block", width: "100%", height: 360 }}></image-slot>
-          <span style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none" }}>
-            <span style={{ width: 70, height: 70, borderRadius: "50%", background: "var(--tp-azul-acento)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, paddingLeft: 5, boxShadow: "0 8px 24px rgba(0,0,0,.35)" }}>▶</span>
-          </span>
+          <image-slot id="tp-sol-video" src="ilustraciones/home.png" shape="rounded" radius="16" fit="contain" placeholder="Suelta la imagen del caso de éxito" style={{ display: "block", width: "100%", height: 360 }}></image-slot>
         </div>
       </div>
     </section>
@@ -246,7 +243,7 @@ export function SolTools() {
           <p style={{ fontSize: "clamp(15px,1.3vw,18px)", lineHeight: 1.55, color: "var(--text-muted)", margin: "18px 0 0", maxWidth: 440 }}>
             Cuando TodoPymes se conecta a tu CRM y herramientas de gestión, cada llamada, mensaje y nota de voz se registra automáticamente. Tu equipo copia menos notas entre sistemas y cierra más trabajos.
           </p>
-          <div style={{ marginTop: 28 }}><Button variant="primary" size="md">Ver todas las integraciones →</Button></div>
+          <div style={{ marginTop: 28 }}><Button variant="primary" size="md" onClick={() => window.openWA("Hola, quiero ver todas las integraciones de TodoPymes.")}>Ver todas las integraciones →</Button></div>
         </div>
         <div style={{ background: "var(--tp-slate-100)", borderRadius: 22, padding: 30, minHeight: 340, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 18 }}>
           <span style={{ width: 64, height: 64, borderRadius: 16, background: "var(--surface-brand)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "var(--shadow-md)" }}>

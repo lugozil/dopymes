@@ -60,7 +60,7 @@ export function RecHero() {
             Únete a nuestra comunidad de partners para desbloquear nuevos ingresos, ampliar tus servicios y deleitar a tus clientes con el centro de mando de la próxima generación de negocios.
           </p>
           <div style={{ marginTop: 32 }}>
-            <Button variant="primary" size="lg">Ver programas de partners</Button>
+            <Button variant="primary" size="lg" onClick={() => window.openWA("Hola, quiero conocer los programas de partners de TodoPymes.")}>Ver programas de partners</Button>
           </div>
         </div>
         <Orbit />

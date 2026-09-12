@@ -56,14 +56,14 @@ export function SolHero() {
             Pon a todo tu equipo en un solo número con una bandeja única para cada llamada, mensaje y nota de voz — así ningún lead se escapa, estés en obra, con un cliente o ya cerrando el día.
           </p>
           <div style={{ display: "flex", gap: 14, marginTop: 32 }}>
-            <Button variant="secondary" size="lg" onClick={() => window.__openModal && window.__openModal("cta")}>Pruébalo gratis</Button>
-            <Button variant="outline" size="lg" onClick={() => window.location.href = "TodoPymes Contacto.html"}>Hablar con ventas</Button>
+            <Button variant="secondary" size="lg" onClick={() => window.openWA("Hola, quiero probar TodoPymes gratis.")}>Pruébalo gratis</Button>
+            <Button variant="outline" size="lg" onClick={() => window.openWA("Hola, quiero hablar con el equipo de ventas de TodoPymes.")}>Hablar con ventas</Button>
           </div>
         </div>
 
         {/* collage */}
         <div className="tp-grid-2" style={{ display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 16, minHeight: 440 }}>
-          <image-slot id="tp-sol-hero-photo" shape="rounded" radius="18" placeholder="Suelta una foto de un técnico / servicio a domicilio" style={{ display: "block", width: "100%", height: "100%" }}></image-slot>
+          <image-slot id="tp-sol-hero-photo" src="ilustraciones/movil.png" shape="rounded" radius="18" fit="cover" position="50% 40%" placeholder="Suelta una foto de un técnico / servicio a domicilio" style={{ display: "block", width: "100%", height: "100%" }}></image-slot>
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             <div style={{ background: "var(--tp-slate-100)", borderRadius: 18, padding: 18, display: "flex", alignItems: "center", justifyContent: "center", flex: "0 0 44%" }}>
               <CallCard />

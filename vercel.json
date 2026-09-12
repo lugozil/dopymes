@@ -1,5 +1,20 @@
 {
   "rewrites": [
-    { "source": "/", "destination": "/TodoPymes%20Web.html" }
+    { "source": "/", "destination": "/TodoPymes%20Web.html" },
+    { "source": "/soluciones", "destination": "/TodoPymes%20Soluciones.html" },
+    { "source": "/recursos", "destination": "/TodoPymes%20Recursos.html" },
+    { "source": "/precios", "destination": "/TodoPymes%20Precios.html" },
+    { "source": "/contacto", "destination": "/TodoPymes%20Contacto.html" },
+    { "source": "/terminos", "destination": "/TodoPymes%20Terminos.html" },
+    { "source": "/privacidad", "destination": "/TodoPymes%20Privacidad.html" }
+  ],
+  "redirects": [
+    { "source": "/TodoPymes Web.html", "destination": "/", "permanent": true },
+    { "source": "/TodoPymes Soluciones.html", "destination": "/soluciones", "permanent": true },
+    { "source": "/TodoPymes Recursos.html", "destination": "/recursos", "permanent": true },
+    { "source": "/TodoPymes Precios.html", "destination": "/precios", "permanent": true },
+    { "source": "/TodoPymes Contacto.html", "destination": "/contacto", "permanent": true },
+    { "source": "/TodoPymes Terminos.html", "destination": "/terminos", "permanent": true },
+    { "source": "/TodoPymes Privacidad.html", "destination": "/privacidad", "permanent": true }
   ]
 }

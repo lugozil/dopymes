@@ -28,7 +28,7 @@ export function Industries() {
           </div>
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <image-slot id="tp-industry-illustration" shape="rounded" radius="18" placeholder="Suelta tu ilustración isométrica de marca" style={{ display: "block", width: "100%", maxWidth: 460, height: 360 }}></image-slot>
+          <image-slot id="tp-industry-illustration" src="ilustraciones/home.png" shape="rounded" radius="18" fit="contain" placeholder="Suelta tu ilustración isométrica de marca" style={{ display: "block", width: "100%", maxWidth: 460, height: 360 }}></image-slot>
         </div>
       </div>
     </section>
@@ -42,7 +42,7 @@ export function Integrations() {
       <div style={{ maxWidth: 1240, margin: "0 auto", padding: "84px 28px" }}>
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 20, flexWrap: "wrap", marginBottom: 36 }}>
           <h2 style={{ fontSize: "clamp(28px,3.6vw,50px)", fontWeight: "var(--fw-black)", letterSpacing: "-0.02em", color: "var(--text-strong)", margin: 0 }}>Mantén todo sincronizado automáticamente</h2>
-          <a href="#" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 15, fontWeight: "var(--fw-semibold)", color: "var(--text-strong)", whiteSpace: "nowrap" }}>Ver todas las integraciones <span aria-hidden>→</span></a>
+          <a href={window.waUrl("Hola, quiero ver todas las integraciones de TodoPymes.")} target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 15, fontWeight: "var(--fw-semibold)", color: "var(--text-strong)", whiteSpace: "nowrap" }}>Ver todas las integraciones <span aria-hidden>→</span></a>
         </div>
         <div className="tp-grid-10" style={{ display: "grid", gridTemplateColumns: "repeat(10, 1fr)", gap: 14 }}>
           {set.map((n, i) => (

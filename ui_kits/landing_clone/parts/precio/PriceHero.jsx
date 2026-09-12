@@ -111,7 +111,7 @@ function PlanCard({ plan, annual }) {
 
       {/* CTA above features */}
       <div style={{ margin: "26px 0 0" }}>
-        <Button variant={plan.variant} size="lg" fullWidth onClick={() => window.__openModal && window.__openModal("cta")}>{plan.cta}</Button>
+        <Button variant={plan.variant} size="lg" fullWidth onClick={() => window.openWA("Hola, me interesa el plan " + plan.name + " de TodoPymes.")}>{plan.cta}</Button>
       </div>
 
       {/* features */}

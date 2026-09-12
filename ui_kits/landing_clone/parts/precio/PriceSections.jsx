@@ -24,7 +24,7 @@ export function SonaBanner() {
             </p>
           </div>
           <div style={{ position: "relative" }}>
-            <Button variant="primary" size="md">Conocer a Sona</Button>
+            <Button variant="primary" size="md" onClick={() => window.openWA("Hola, quiero conocer a Sona IA de TodoPymes.")}>Conocer a Sona</Button>
           </div>
         </div>
       </div>
@@ -200,8 +200,8 @@ export function SwitchFree() {
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20, flexWrap: "wrap", marginBottom: 40 }}>
           <h2 style={{ fontSize: "clamp(28px,3.4vw,46px)", fontWeight: "var(--fw-black)", letterSpacing: "-0.02em", color: "var(--text-strong)", margin: 0, maxWidth: 560 }}>Cámbiate desde cualquier proveedor, gratis</h2>
           <div style={{ display: "flex", gap: 12 }}>
-            <Button variant="outline" size="md">Pruébalo gratis</Button>
-            <Button variant="secondary" size="md">Migra tu número</Button>
+            <Button variant="outline" size="md" onClick={() => window.openWA("Hola, quiero probar TodoPymes gratis.")}>Pruébalo gratis</Button>
+            <Button variant="secondary" size="md" onClick={() => window.openWA("Hola, quiero migrar mi número a TodoPymes.")}>Migra tu número</Button>
           </div>
         </div>
         <div className="tp-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>

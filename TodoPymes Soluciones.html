@@ -6,6 +6,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>TodoPymes · Soluciones para servicios a domicilio</title>
+<link rel="icon" type="image/png" href="assets/logos/icono-dark.png" />
+<link rel="apple-touch-icon" href="assets/logos/icono-dark.png" />
 <link rel="stylesheet" href="styles.css" />
 <style>
   html, body { margin: 0; background: #fff; }
@@ -19,6 +21,7 @@
 <div id="root"></div>
 
 <script src="ui_kits/landing_clone/image-slot.js"></script>
+<script src="ui_kits/landing_clone/wa.js"></script>
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
@@ -33,7 +36,6 @@ const SOURCES = [
   "components/core/Card.jsx",
   "components/core/Avatar.jsx",
   "ui_kits/landing_clone/parts/Nav.jsx",
-  "ui_kits/landing_clone/parts/LeadModal.jsx",
   "ui_kits/landing_clone/parts/Closing.jsx",
   "ui_kits/landing_clone/parts/sol/SolHero.jsx",
   "ui_kits/landing_clone/parts/sol/SolSections.jsx",
@@ -53,8 +55,8 @@ const SOURCES = [
   new Function("React", "NS", Babel.transform(combined, { presets: ["react"] }).code)(window.React, NS);
 
   const {
-    NavBar, SolHero, SolDarkCards, SolSection, SolVideo, SolTestimonials, SolTools,
-    PanelChat, PanelNotes, PanelFlow, PanelInsights, GetStarted, FinalCta, Footer, LeadModal
+    NavBar, SolHero, SolDarkCards, SolSection, SolStory, SolTestimonials, SolTools,
+    PanelChat, PanelNotes, PanelFlow, PanelInsights, GetStarted, FinalCta, Footer
   } = NS;
   const e = React.createElement;
 
@@ -85,7 +87,7 @@ const SOURCES = [
       e(SolHero),
       e(SolDarkCards),
       e(SolSection, { title: "Responde a cada oportunidad —", accent: "rápido", body: "TodoPymes dirige nuevas llamadas y mensajes a la persona correcta en el orden correcto, con cobertura fuera de horario, para que cada cliente reciba una respuesta veloz.", textSide: "left", panel: e(PanelChat), items: sec1 }),
-      e(SolVideo),
+      e(SolStory),
       e(SolSection, { title: "Mantén a equipo, campo y clientes en la", accent: "misma página", body: "Es fácil que los detalles se pierdan cuando las consultas se reparten entre equipos. TodoPymes registra y organiza cada mensaje en un solo lugar, así todos saben qué sigue.", textSide: "right", panel: e(PanelNotes), items: sec2, bg: "var(--tp-slate-50)" }),
       e(SolSection, { title: "Las llamadas se contestan, incluso cuando estás", accent: "ocupado", body: "TodoPymes te deja configurar reglas de enrutamiento, grupos de timbrado y rutas fuera de horario que siguen tus horarios reales. Cada llamada llega a la persona correcta en segundos.", textSide: "left", panel: e(PanelFlow), items: sec3 }),
       e(SolTestimonials),
@@ -93,8 +95,7 @@ const SOURCES = [
       e(SolSection, { title: "Toma decisiones más inteligentes con", accent: "insights de llamadas", body: "Obtén la visibilidad que necesitas para operar más afinado, formar a tu equipo y ganar más clientes felices.", textSide: "right", panel: e(PanelInsights), items: sec4, bg: "var(--tp-slate-50)" }),
       e(GetStarted, { title: "Mantente al tanto de cada llamada, trabajo y", subtitle: "conversación de tu negocio de servicios." }),
       e(FinalCta, { title: "Nunca pierdas una", accent: "llamada o cliente" }),
-      e(Footer),
-      e(LeadModal)
+      e(Footer)
     );
   }
   ReactDOM.createRoot(document.getElementById("root")).render(e(Page));

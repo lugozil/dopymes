@@ -19,12 +19,10 @@ export function Stories() {
         </h2>
 
         <div className="tp-grid-2" style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.08)", borderRadius: 22, padding: 22, display: "grid", gridTemplateColumns: "1.45fr 1fr", gap: 30, alignItems: "center" }}>
-          {/* video */}
+          {/* imagen del caso de éxito */}
           <div style={{ position: "relative", borderRadius: 14, overflow: "hidden" }}>
-            <image-slot id="tp-story-video" shape="rounded" radius="14" placeholder="Suelta el video o la portada de tu caso de éxito" style={{ display: "block", width: "100%", height: 380 }}></image-slot>
-            <span style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none" }}>
-              <span style={{ width: 76, height: 76, borderRadius: "50%", background: "var(--tp-azul-acento)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 26, boxShadow: "0 8px 24px rgba(0,0,0,.4)", paddingLeft: 6 }}>▶</span>
-            </span>
+            <image-slot id="tp-story-video" src="ilustraciones/embudo.png" shape="rounded" radius="14" fit="cover" position="0% 0%" placeholder="Suelta la imagen de tu caso de éxito" style={{ display: "block", width: "100%", height: 380 }}></image-slot>
+            <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 190, background: "linear-gradient(to top, rgba(0,20,36,.92), transparent)", pointerEvents: "none" }} />
             <div style={{ position: "absolute", left: 22, bottom: 20, pointerEvents: "none" }}>
               <div style={{ fontSize: 54, fontWeight: "var(--fw-black)", color: "#fff", lineHeight: 1, letterSpacing: "-0.02em" }}>4x</div>
               <div style={{ fontSize: 14, color: "rgba(255,255,255,.85)", marginTop: 4 }}>más rápido en tiempos de respuesta</div>
@@ -40,7 +38,7 @@ export function Stories() {
               <div style={{ fontSize: 16, fontWeight: "var(--fw-bold)", color: "#fff" }}>Carolina Méndez</div>
               <div style={{ fontSize: 14, color: "rgba(255,255,255,.6)" }}>Co-Fundadora @ Glamour Spa</div>
             </div>
-            <div style={{ marginTop: 26 }}><Button variant="primary" size="md">Leer la historia</Button></div>
+            <div style={{ marginTop: 26 }}><Button variant="primary" size="md" onClick={() => window.openWA("Hola, quiero conocer casos de éxito de TodoPymes.")}>Leer la historia</Button></div>
           </div>
         </div>
       </div>
@@ -84,8 +82,8 @@ export function SwitchProvider() {
       <div style={{ display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap", justifyContent: "space-between", marginBottom: 40 }}>
         <h2 style={{ fontSize: "clamp(28px,3.4vw,46px)", fontWeight: "var(--fw-black)", letterSpacing: "-0.02em", color: "var(--text-strong)", margin: 0 }}>Cámbiate desde cualquier proveedor, gratis</h2>
         <div style={{ display: "flex", gap: 12 }}>
-          <Button variant="outline" size="md">Pruébalo gratis</Button>
-          <Button variant="secondary" size="md">Migra tu número</Button>
+          <Button variant="outline" size="md" onClick={() => window.openWA("Hola, quiero probar TodoPymes gratis.")}>Pruébalo gratis</Button>
+          <Button variant="secondary" size="md" onClick={() => window.openWA("Hola, quiero migrar mi número a TodoPymes.")}>Migra tu número</Button>
         </div>
       </div>
 

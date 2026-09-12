@@ -4,9 +4,9 @@ import React from "react";
    ¿Listo para empezar? (dark) + CTA final + Footer.
    ============================================================ */
 
-function StartCard({ icon, title, sub }) {
+function StartCard({ icon, title, sub, msg }) {
   return (
-    <div style={{ position: "relative", border: "1px solid rgba(255,255,255,.12)", borderRadius: 18, padding: "28px 26px", minHeight: 230, display: "flex", flexDirection: "column", background: "rgba(255,255,255,.02)" }}>
+    <div role="button" tabIndex={0} onClick={() => window.openWA(msg)} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") window.openWA(msg); }} style={{ position: "relative", border: "1px solid rgba(255,255,255,.12)", borderRadius: 18, padding: "28px 26px", minHeight: 230, display: "flex", flexDirection: "column", background: "rgba(255,255,255,.02)", cursor: "pointer" }}>
       <span style={{ width: 64, height: 64, borderRadius: 16, background: "rgba(12,106,249,.14)", border: "1px solid rgba(12,106,249,.3)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "auto" }}>
         <img src={ICONS + "white/" + icon + ".png"} style={{ width: 30, height: 30 }} alt="" />
       </span>
@@ -28,9 +28,9 @@ export function GetStarted({ title = "¿Listo para empezar?", subtitle = "Explor
           {title} <span style={{ color: "rgba(255,255,255,.5)" }}>{subtitle}</span>
         </h2>
         <div className="tp-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }}>
-          <StartCard icon="internet" title="Elige un número nuevo" sub="o usa el que ya tienes" />
-          <StartCard icon="analisis" title="Mira una demo" sub="y empieza con TodoPymes" />
-          <StartCard icon="estadistica" title="Ve los precios," sub="elige un plan y empieza" />
+          <StartCard icon="internet" title="Elige un número nuevo" sub="o usa el que ya tienes" msg="Hola, quiero activar un número con TodoPymes." />
+          <StartCard icon="analisis" title="Mira una demo" sub="y empieza con TodoPymes" msg="Hola, quiero agendar una demo de TodoPymes." />
+          <StartCard icon="estadistica" title="Ve los precios," sub="elige un plan y empieza" msg="Hola, quiero conocer los planes y precios de TodoPymes." />
         </div>
 
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20, flexWrap: "wrap", marginTop: 56 }}>
@@ -78,8 +78,8 @@ export function FinalCta({ title = "El dinero está", accent = "en juego" }) {
           <div style={{ color: "var(--tp-azul-acento)" }}>{accent}</div>
         </h2>
         <div style={{ display: "flex", gap: 18, flexWrap: "wrap" }}>
-          <BigBtn label="Pruébalo gratis" dark onClick={() => window.__openModal && window.__openModal("cta")} />
-          <BigBtn label="Hablar con ventas" onClick={() => window.location.href = "TodoPymes Contacto.html"} />
+          <BigBtn label="Pruébalo gratis" dark onClick={() => window.openWA("Hola, quiero probar TodoPymes gratis.")} />
+          <BigBtn label="Hablar con ventas" onClick={() => window.openWA("Hola, quiero hablar con el equipo de ventas de TodoPymes.")} />
         </div>
       </div>
     </section>
@@ -114,8 +114,8 @@ export function Footer() {
           <img src={LOGOS + "todopymes-principal.png"} alt="TodoPymes" style={{ height: 24 }} />
           <span style={{ fontSize: 13, color: "var(--text-muted)" }}>Automatizar · Conectar · Optimizar · Crecer</span>
           <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 18, fontSize: 13, color: "var(--text-muted)" }}>
-            <a href="TodoPymes Terminos.html" style={{ color: "var(--text-muted)" }}>Términos</a>
-            <a href="TodoPymes Privacidad.html" style={{ color: "var(--text-muted)" }}>Privacidad</a>
+            <a href="/terminos" style={{ color: "var(--text-muted)" }}>Términos</a>
+            <a href="/privacidad" style={{ color: "var(--text-muted)" }}>Privacidad</a>
             <span>© 2026 TodoPymes · LATAM y el Caribe</span>
           </div>
         </div>
