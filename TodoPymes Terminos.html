@@ -4,7 +4,24 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>TodoPymes · Términos y Condiciones</title>
+<title>Términos y Condiciones | TodoPymes</title>
+<meta name="description" content="Términos y condiciones de uso de la plataforma TodoPymes." />
+<link rel="canonical" href="https://www.dopymes.com/terminos" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta property="og:site_name" content="TodoPymes" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:title" content="Términos y Condiciones | TodoPymes" />
+<meta property="og:description" content="Términos y condiciones de uso de la plataforma TodoPymes." />
+<meta property="og:url" content="https://www.dopymes.com/terminos" />
+<meta property="og:image" content="https://www.dopymes.com/assets/og-todopymes.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Términos y Condiciones | TodoPymes" />
+<meta name="twitter:description" content="Términos y condiciones de uso de la plataforma TodoPymes." />
+<meta name="twitter:image" content="https://www.dopymes.com/assets/og-todopymes.png" />
+<meta name="theme-color" content="#003357" />
 <link rel="icon" type="image/png" href="assets/logos/icono-dark.png" />
 <link rel="apple-touch-icon" href="assets/logos/icono-dark.png" />
 <link rel="stylesheet" href="styles.css" />
@@ -17,7 +34,19 @@
 </style>
 </head>
 <body>
-<div id="root"></div>
+<div id="root"><div id="tp-fallback" style="max-width:760px;margin:0 auto;padding:64px 28px;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;color:#003357">
+      <img src="assets/logos/todopymes-principal.png" alt="TodoPymes" style="height:34px" />
+      <h1 style="font-size:34px;line-height:1.15;letter-spacing:-.02em;margin:28px 0 0">Términos y Condiciones</h1>
+      <p style="font-size:17px;line-height:1.6;color:#456;margin:18px 0 0">Condiciones que rigen el uso de la plataforma TodoPymes.</p>
+      <p style="margin:28px 0 0"><a href="https://wa.me/59897085862" style="display:inline-block;background:#0c6af9;color:#fff;font-weight:600;padding:13px 24px;border-radius:12px;text-decoration:none">Escríbenos por WhatsApp</a></p>
+      <nav style="display:flex;flex-wrap:wrap;gap:20px;margin-top:34px;font-size:15px">
+      <a href="/" style="color:#124b87;font-weight:600;text-decoration:none">Producto</a>
+      <a href="/soluciones" style="color:#124b87;font-weight:600;text-decoration:none">Soluciones</a>
+      <a href="/recursos" style="color:#124b87;font-weight:600;text-decoration:none">Recursos</a>
+      <a href="/precios" style="color:#124b87;font-weight:600;text-decoration:none">Precios</a>
+      <a href="/contacto" style="color:#124b87;font-weight:600;text-decoration:none">Contacto</a>
+      </nav>
+    </div></div>
 
 <script src="ui_kits/landing_clone/image-slot.js"></script>
 <script src="ui_kits/landing_clone/wa.js"></script>
@@ -63,7 +92,7 @@ const SOURCES = [
   }
   ReactDOM.createRoot(document.getElementById("root")).render(e(Page));
 })().catch((err) => {
-  document.getElementById("root").innerHTML = "<pre style='color:#d8453b;padding:24px;font:13px monospace;white-space:pre-wrap'>" + (err.stack || err) + "</pre>";
+  console.error("[TodoPymes] No se pudo cargar la interfaz:", err);
 });
 </script>
 </body>
